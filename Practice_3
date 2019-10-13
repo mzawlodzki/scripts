@@ -1,0 +1,14 @@
+#! /usr/bin/env python3
+
+# this code will take a sentence from user input, make it all lowercase, remove spaces, and count + print the length
+
+# Usage: Input a sentence
+
+newlist = input("Please enter a full, grammatically correct sentence: ")
+print(newlist)
+
+newlist = newlist.lower()
+newlist = newlist.replace(" ","")
+print(newlist)
+newlist = print(len(newlist))
+

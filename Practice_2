@@ -1,0 +1,8 @@
+#! /usr/bin/env python3
+
+# This script counts the number of 2s in a string
+
+numlist = 112345678911234566
+stnumlist = str(numlist)
+print(stnumlist.count('2'))
+
