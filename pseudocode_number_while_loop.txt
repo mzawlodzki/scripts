@@ -1,0 +1,8 @@
+#create a list of numbers and loop through them to add 1 to every nuber and print the list
+
+create a list of numbers 1-9
+
+for thing in list of numbers 1-9
+	+1 to each number
+	save new number in list?
+	print new string of numbers

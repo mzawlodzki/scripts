@@ -1,0 +1,22 @@
+#make dictionary
+
+am_dict = {}
+am_dict['cat'] = 15
+am_dict['dog'] = 45
+am_dict['slug'] = 0.07
+am_dict['child'] = 70
+
+#print keys
+am_dict.keys()
+
+#make list of keys
+am_list = list(am_dict.keys())
+
+#go through each animal in the list
+for animal in am_list:
+	# if/else statement for animal size
+	if animal in am_dict[animal] > 20:
+		print(animal, "big")
+	else:
+		print(animal, "small")		
+
