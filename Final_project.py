@@ -10,16 +10,18 @@
 ####	Input the name of output file on line 22
 
 
-#import sys
+import sys
 import re
 
 #import iterator
 #head -n 128 chogra01_chondestes_grammacus_nk276103-READ1.fastq > practice_file_2.fastq
 
-#InFile = ("Test_file.fasta")
+InFile = input("Input fasta file: ")
+InFileName = InFile.split('.')[0]
+
 
 #	create outfile and open it for writing
-OutFileName = ("Test_file_2.fasta")
+OutFileName = ("%s.fasta" % InFileName)
 OutFile = open(OutFileName, 'w')
 
 #		InFileName.strip(".txt")
@@ -34,7 +36,7 @@ TempFastq = []
 # 	The regular expression can be changed depending on how the user wants to trim the quality score
 #	Results of the loop are written to a list: TempFastq
 
-for Line in open("Test_file.fastq",'r'):
+for Line in open(InFile,'r'):
 	if LineNumber % 4 == 0:
 		Line = Line.strip("\n")
 		Find = '(\S+)[\>\<\=\;\:]\S+'
@@ -47,7 +49,7 @@ for Line in open("Test_file.fastq",'r'):
 	else:
 		Line = Line.strip("\n")
 		TempFastq.append(Line)
-		LineNumber += 1
+	LineNumber += 1
 	
 #print(TempFastq)
 
@@ -142,6 +144,8 @@ for Line in Plus_removed:
 #		Line = Line.strip('\n')
 		if len(Line) == DNA_match[AlsoCount-1]:
 			print("Trimming Sequences...")
+			NewLine.append(Line)
+
 		else:
 			Line[:DNA_match[AlsoCount-1]]
 			print("Old line length:", (len(Line)))
